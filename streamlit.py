@@ -1,15 +1,15 @@
 import streamlit as st
-import numpy as np
+# import numpy as np
 import pandas as pd
 # from streamlit_option_menu import option_menu
-from datetime import date
-import time
-import json
+# from datetime import date
+# import time
+# import json
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from streamlit_modal import Modal
 from streamlit_geolocation import streamlit_geolocation
-import streamlit.components.v1 as components
+# import streamlit.components.v1 as components
 from math import radians, cos, sin, asin, sqrt
 
 # SET PAGE CONFIGURATION
