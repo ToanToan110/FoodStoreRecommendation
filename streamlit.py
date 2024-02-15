@@ -12,6 +12,9 @@ from streamlit_geolocation import streamlit_geolocation
 # import streamlit.components.v1 as components
 from math import radians, cos, sin, asin, sqrt
 
+
+
+
 # SET PAGE CONFIGURATION
 st.set_page_config(
     page_title= "KPI PERFROMANCE",
@@ -79,10 +82,15 @@ def ShowItemInfo(index, img_link, name):
 
 ## 1.4 Đưa ra các món ăn tương đồng:
 @st.cache_data
-def getdata():
-    df_similarity_result = pd.read_csv('C:/Users/NJV/Desktop/FoodDelivery/CosineSimResult.csv')
-    return df_similarity_result
-df_similarity_result = getdata()
+def getdata(url):
+    file_id = url.split('/')[-2]
+    link = f"https://drive.google.com/uc?id={file_id}"
+    data = pd.read_csv("ClusterResult.csv")
+    df_similarity_result = pd.read_csv(link)
+    return data, df_similarity_result
+data, df_similarity_result = getdata('https://drive.google.com/file/d/1CtzVFUv3n8GK94iiaNJ7b0RGte1n4sjE/view?usp=sharing')
+
+
 
 def ShowSimiRecomment(id, cluster):
     with st.container(height = 1000):
@@ -196,11 +204,6 @@ def RecmtByUserLocation(df_location, user_location, number_of_recmt):
 
 ## 1.2. Default Recommendation Food:
 
-@st.cache_data
-def clusterdata():
-    data = pd.read_csv("C:/Users/NJV/Desktop/FoodDelivery/ClusterResult.csv")
-    return data
-data = clusterdata()
 
 
 height_size = 3
