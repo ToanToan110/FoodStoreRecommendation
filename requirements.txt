@@ -1,6 +1,6 @@
 streamlit
 scikit-learn
 streamlit_modal 
-streamlit_geolocation 
+streamlit_js_eval 
 streamlit_folium
 streamlit_lottie
