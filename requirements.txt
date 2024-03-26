@@ -1,3 +1,4 @@
+math
 streamlit
 scikit-learn
 streamlit_modal 
