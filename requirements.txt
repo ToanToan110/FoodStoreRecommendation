@@ -5,3 +5,4 @@ streamlit_js_eval
 streamlit_folium
 streamlit_lottie
 streamlit_option_menu
+graphviz
