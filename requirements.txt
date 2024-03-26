@@ -1,5 +1,4 @@
 pip==24.0
-math
 streamlit
 scikit-learn
 streamlit_modal 
