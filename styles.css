@@ -22,11 +22,10 @@ div.row-widget.stButton
     /* border-radius: 10px; */
     text-align: center;
 }
-/* st-emotion-cache-7ym5gk ef3psqc12 */
-div.st-emotion-cache-1xw8zd0.e1f1d6gn0
+/* div.st-emotion-cache-18fuwiq.e1f1d6gn3
 {
-    background-color: burlywood;
-}
+    background-color: rgb(228, 187, 132);
+} */
 .scrollcontainer {
     width:100%;
     position: fixed;
@@ -36,3 +35,7 @@ div.st-emotion-cache-1xw8zd0.e1f1d6gn0
     bottom:0px;
     top:60px;
   }
+  /* div.st-emotion-cache-ek46pn.e1f1d6gn3
+{
+    background-color: rgb(228, 187, 132);
+} */
