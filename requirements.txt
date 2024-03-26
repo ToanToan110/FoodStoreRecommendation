@@ -1,4 +1,4 @@
-pip install pip-upgrader
+pip==24.0
 math
 streamlit
 scikit-learn
