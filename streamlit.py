@@ -39,7 +39,7 @@ with open('styles.css') as f:
 def getdata(url):
     file_id = url.split('/')[-2]
     link = f"https://drive.google.com/uc?id={file_id}"
-    data = pd.read_csv("asset\ClusterResult.csv")
+    data = pd.read_csv("asset/ClusterResult.csv")
     # data.drop(['level_0'], axis = 1, inplace=True)
     df_similarity_result = pd.read_csv(link)
 
@@ -599,11 +599,11 @@ if menu == "Chi tiết dự án":
         st.subheader("Step I: Data Collection")
         st.write("- Pharse 1: Crawling Restaurant/Food store in HCM city from ShopeeFood (https://shopeefood.vn/ho-chi-minh/food/deals):")
         with st.expander("View sample data after crawling"):
-            st.write(pd.read_csv("asset\data_collected.csv").head(10).iloc[:,1:])
+            st.write(pd.read_csv("asset/data_collected.csv").head(10).iloc[:,1:])
         
         st.write("- Pharse 2: Crawling each Restaurant/Food store's info from Foody:")
         with st.expander("View sample data after crawling"):
-            st.write(pd.read_csv("asset\RestaurantInfo.csv").head(10))
+            st.write(pd.read_csv("asset/RestaurantInfo.csv").head(10))
     with st.expander("Function to crawling Data"):
         st.code('''
 def CrawlFoodData():
@@ -668,7 +668,7 @@ def CrawlFoodData():
 x = ""
 with st.container():
     footer = Footer(
-        str('asset\image_avatar.jpg'),
+        str('asset/image_avatar.jpg'),
         'https://www.linkedin.com/in/toan-tran-555a5621b/',
         'https://github.com/ToanToan110/',
         'https://www.facebook.com/profile.php?id=100010334923606'
