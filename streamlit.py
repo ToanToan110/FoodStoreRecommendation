@@ -39,7 +39,7 @@ with open('styles.css') as f:
 def getdata(url):
     file_id = url.split('/')[-2]
     link = f"https://drive.google.com/uc?id={file_id}"
-    data = pd.read_csv("ClusterResult.csv")
+    data = pd.read_csv("asset\ClusterResult.csv")
     # data.drop(['level_0'], axis = 1, inplace=True)
     df_similarity_result = pd.read_csv(link)
 
@@ -52,7 +52,10 @@ data, df_similarity_result = getdata('https://drive.google.com/file/d/1qww9h5R6S
 
 
 # @st.cache_data
-current_location = get_geolocation()['coords']
+try:
+    current_location = get_geolocation()['coords']
+except:
+    st.header("Please click Allow access to your Location")
 
 
 
@@ -596,11 +599,11 @@ if menu == "Chi tiết dự án":
         st.subheader("Step I: Data Collection")
         st.write("- Pharse 1: Crawling Restaurant/Food store in HCM city from ShopeeFood (https://shopeefood.vn/ho-chi-minh/food/deals):")
         with st.expander("View sample data after crawling"):
-            st.write(pd.read_csv("tests.csv").head(10).iloc[:,1:])
+            st.write(pd.read_csv("asset\data_collected.csv").head(10).iloc[:,1:])
         
         st.write("- Pharse 2: Crawling each Restaurant/Food store's info from Foody:")
         with st.expander("View sample data after crawling"):
-            st.write(pd.read_csv("RestaurantInfo.csv").head(10))
+            st.write(pd.read_csv("asset\RestaurantInfo.csv").head(10))
     with st.expander("Function to crawling Data"):
         st.code('''
 def CrawlFoodData():
@@ -656,15 +659,32 @@ def CrawlFoodData():
     st.write("- User Location: Calculation distance base on coordinate of restaurant and user location")
     st.write("- Other features: Number of visit, Flash Sale promotion,...")
     "---"
+    st.write("Next step of this Project")
+    st.write("- Collect Comment data and User's Network data")
+    st.write("- Build the recommender base on collaborative filtering algorithm instead of content-based")
     end = st.columns([5.5,3,5.5])
     with end[1]:
         st.subheader("THANKS FOR VISIT!")
-
+x = ""
 with st.container():
     footer = Footer(
-        'https://scontent.fsgn8-4.fna.fbcdn.net/v/t1.6435-9/148275772_1342911596063325_3059342905885115862_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeFxW95d_7EAKV5GOVyKmrTSKR1B5NW0V5gpHUHk1bRXmHza6EBMkV21mu7hTcgTQdKT1QTl1LH_pj4URfYAODsd&_nc_ohc=UiTLjMMEtdoAX_8b7lf&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfB5Hewj1fFwzTcpg24zj20OIVtP75u73w3rf_Pcpb3ISQ&oe=6602AEF8',
+        str('asset\image_avatar.jpg'),
         'https://www.linkedin.com/in/toan-tran-555a5621b/',
         'https://github.com/ToanToan110/',
         'https://www.facebook.com/profile.php?id=100010334923606'
     )
     footer.show_page()
+
+
+# dựa vào thời gian đặt hàng
+# dựa vào loại nước khô
+# quán mới, quán chưa từng ăn
+# data đơn hàng
+# key word: chill, sinh nhật, tiệc tùng, gen z
+# top down recmd theo điểm, weight theo số lượng order
+# test app trên cộng đồng (optional)
+
+
+
+# ăn vặt, đồ nước, đồ khô, ăn vặt, quán nhậu, đồ uống
+# Đồ nước: mì, bún, phở, hủ tiếu,
